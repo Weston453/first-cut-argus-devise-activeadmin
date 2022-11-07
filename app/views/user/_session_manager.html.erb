@@ -6,7 +6,9 @@
         <li><a class="dropdown-item" href="#">Action</a></li>
         <li><%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item" %></li>
         <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Admin Dashboard", admin_dashboard_path, class:"dropdown-item" %></li>
+        <% if current_user && current_user.superadmin %>
+            <li><%= link_to "Admin Dashboard", admin_dashboard_path, class:"dropdown-item" %></li>
+        <% end %>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
     </ul>
 </li>
