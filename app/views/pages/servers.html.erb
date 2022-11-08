@@ -1,5 +1,7 @@
 <%= render 'layouts/navbar' %>
 <div class="container">
     <h1>Servers</h1>
-    <h1>Current User ID: <%= current_user.id %></h1>
+    <p>Current Username: <%= current_user.username %></p>
+    <p>Current User ID: <%= current_user.id %></p>
+    <p>Is the Current User an Admin?: <%= current_user.superadmin? %></p>
 </div>
